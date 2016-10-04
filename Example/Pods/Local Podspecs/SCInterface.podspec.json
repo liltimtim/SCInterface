@@ -1,9 +1,9 @@
 {
   "name": "SCInterface",
   "version": "0.1.0",
-  "summary": "A short description of SCInterface.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/<GITHUB_USERNAME>/SCInterface",
+  "summary": "Swift 3.0 for SoundCloud",
+  "description": "Simple easy to use interface to SoundCloud",
+  "homepage": "https://github.com/liltimtim/SCInterface",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,7 +12,7 @@
     "Timothy Barrett": "liltimtim@gmail.com"
   },
   "source": {
-    "git": "https://github.com/<GITHUB_USERNAME>/SCInterface.git",
+    "git": "https://github.com/liltimtim/SCInterface.git",
     "tag": "0.1.0"
   },
   "platforms": {

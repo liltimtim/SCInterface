@@ -21,7 +21,7 @@ SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
   AlamofireObjectMapper: 9faa3ce5a240efda1b209009a2d6e1e949227abc
   ObjectMapper: aed2570edabbd3c9b26c939e1cabdb6558f933e0
-  SCInterface: 616af7b5d96271e226268bb4f8bbec1f4dc40d34
+  SCInterface: fce5c3101a13c3465527c89b3e7fd9da270c02a5
 
 PODFILE CHECKSUM: f859c3593a810a18e7421f840488124d33f614cb
 
