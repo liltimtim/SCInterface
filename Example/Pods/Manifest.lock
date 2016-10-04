@@ -1,0 +1,28 @@
+PODS:
+  - Alamofire (4.0.1)
+  - AlamofireObjectMapper (4.0.0):
+    - Alamofire (~> 4.0)
+    - ObjectMapper (~> 2.0)
+  - ObjectMapper (2.0.0)
+  - SCInterface (0.1.0):
+    - Alamofire (~> 4.0.0)
+    - AlamofireObjectMapper (~> 4.0.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - AlamofireObjectMapper
+  - SCInterface (from `../`)
+
+EXTERNAL SOURCES:
+  SCInterface:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  AlamofireObjectMapper: 9faa3ce5a240efda1b209009a2d6e1e949227abc
+  ObjectMapper: aed2570edabbd3c9b26c939e1cabdb6558f933e0
+  SCInterface: 616af7b5d96271e226268bb4f8bbec1f4dc40d34
+
+PODFILE CHECKSUM: f859c3593a810a18e7421f840488124d33f614cb
+
+COCOAPODS: 1.1.0.rc.2

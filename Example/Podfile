@@ -1,6 +1,8 @@
+platform :ios, '9.0'
 use_frameworks!
 target 'SCInterface_Tests' do
   pod 'SCInterface', :path => '../'
-  
+  pod 'Alamofire'
+  pod 'AlamofireObjectMapper'
   
 end
