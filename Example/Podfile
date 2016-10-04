@@ -1,0 +1,6 @@
+use_frameworks!
+target 'SCInterface_Tests' do
+  pod 'SCInterface', :path => '../'
+  
+  
+end
