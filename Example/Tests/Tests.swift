@@ -5,7 +5,7 @@ import SCInterface
 class TTInterfaceTest: XCTestCase {
     func testSearchForTracksEnsureResultsReturned() {
         let exp = expectation(description: "Get a list of tracks via searching")
-        _ = TTInterface.search(searchTerm: "test", success: { (tracks) in
+        _ = TTInterface.shared.search(searchTerm: "test", success: { (tracks) in
             XCTAssertGreaterThan(tracks.count, 0)
             guard let firstTrack = tracks.first else {
                 XCTFail()
