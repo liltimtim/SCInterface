@@ -43,4 +43,10 @@ class TTInterfaceTest: XCTestCase {
         XCTAssertNotNil(user.permalink)
         XCTAssertNotNil(user.avatar_url)
     }
+    
+    func testAuthenticate() {
+        let exp = expectation(description: "Authenticate")
+        TTInterface.shared.authenticate()
+        
+    }
 }
