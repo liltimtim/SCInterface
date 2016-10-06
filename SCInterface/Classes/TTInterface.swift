@@ -9,8 +9,12 @@
 import Foundation
 import Alamofire
 import AlamofireObjectMapper
+
 public class TTInterface: NSObject {
+    // TODO: These should be moved to AppDelegate when the instance is first started
     public var scClientID:String = "0086921a441b81faf030f38882f1ec0a"
+    public var scClientSecret:String = "2ea1a94bac58e8ded1dadb97cb3300de"
+    public var scRedirectURI:String = "tubeTunes://soundcloud/oauth"
     private static let baseURL:String = "https://api.soundcloud.com"
     public static let shared:TTInterface = TTInterface()
     

@@ -27,4 +27,5 @@ s.source_files = 'SCInterface/Classes/**/*'
 # }
   s.dependency 'Alamofire', '~> 4.0.0'
   s.dependency 'AlamofireObjectMapper', '~> 4.0.0'
+  s.dependency 'p2.OAuth2'
 end

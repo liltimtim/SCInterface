@@ -4,5 +4,12 @@ target 'SCInterface_Tests' do
   pod 'SCInterface', :path => '../'
   pod 'Alamofire'
   pod 'AlamofireObjectMapper'
-  
+  pod 'p2.OAuth2'
+end
+
+target 'SCInterface-Example-App' do
+    pod 'SCInterface', :path => '../'
+    pod 'Alamofire'
+    pod 'AlamofireObjectMapper'
+    pod 'p2.OAuth2'
 end

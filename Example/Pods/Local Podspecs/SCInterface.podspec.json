@@ -26,6 +26,9 @@
     ],
     "AlamofireObjectMapper": [
       "~> 4.0.0"
+    ],
+    "p2.OAuth2": [
+
     ]
   }
 }

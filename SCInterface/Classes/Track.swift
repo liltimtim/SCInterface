@@ -53,7 +53,7 @@ public class Track: NSObject, Mappable {
     
     public required init?(map: Map) {
         super.init()
-        mapping(map: map)
+        
     }
     
     public func mapping(map: Map) {

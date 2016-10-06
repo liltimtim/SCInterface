@@ -4,25 +4,32 @@ PODS:
     - Alamofire (~> 4.0)
     - ObjectMapper (~> 2.0)
   - ObjectMapper (2.0.0)
+  - p2.OAuth2 (2.3.0):
+    - SwiftKeychain (~> 1.0)
   - SCInterface (0.1.0):
     - Alamofire (~> 4.0.0)
     - AlamofireObjectMapper (~> 4.0.0)
+    - p2.OAuth2
+  - SwiftKeychain (1.0.0)
 
 DEPENDENCIES:
   - Alamofire
   - AlamofireObjectMapper
+  - p2.OAuth2
   - SCInterface (from `../`)
 
 EXTERNAL SOURCES:
   SCInterface:
-    :path: "../"
+    :path: ../
 
 SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
   AlamofireObjectMapper: 9faa3ce5a240efda1b209009a2d6e1e949227abc
   ObjectMapper: aed2570edabbd3c9b26c939e1cabdb6558f933e0
-  SCInterface: fce5c3101a13c3465527c89b3e7fd9da270c02a5
+  p2.OAuth2: 65979bc5e528e4e5298c75b385c944d7027cab1c
+  SCInterface: 6831b66f7ed4d04d3166cab9f274c1fb98f5cf05
+  SwiftKeychain: fd9ad69f7b3ff7a0c7ba579da508bbaa89a395b2
 
-PODFILE CHECKSUM: f859c3593a810a18e7421f840488124d33f614cb
+PODFILE CHECKSUM: 620199efaa959372f00095cff75bbd08df7532c3
 
 COCOAPODS: 1.1.0.rc.2
