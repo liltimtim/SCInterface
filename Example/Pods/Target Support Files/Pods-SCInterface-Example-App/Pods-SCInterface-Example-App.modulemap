@@ -1,0 +1,6 @@
+framework module Pods_SCInterface_Example_App {
+  umbrella header "Pods-SCInterface-Example-App-umbrella.h"
+
+  export *
+  module * { export * }
+}

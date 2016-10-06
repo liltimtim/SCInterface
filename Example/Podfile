@@ -1,15 +1,16 @@
 platform :ios, '9.0'
 use_frameworks!
+def import_pods
+    pod 'Alamofire'
+    pod 'AlamofireObjectMapper'
+    pod 'p2.OAuth2', :git => 'https://github.com/p2/OAuth2', :submodules => true
+end
 target 'SCInterface_Tests' do
   pod 'SCInterface', :path => '../'
-  pod 'Alamofire'
-  pod 'AlamofireObjectMapper'
-  pod 'p2.OAuth2'
+  import_pods
 end
 
 target 'SCInterface-Example-App' do
     pod 'SCInterface', :path => '../'
-    pod 'Alamofire'
-    pod 'AlamofireObjectMapper'
-    pod 'p2.OAuth2'
+    import_pods
 end
