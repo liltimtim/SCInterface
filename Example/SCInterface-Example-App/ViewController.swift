@@ -17,17 +17,16 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if TTInterface.shared.oauth2?.accessToken == nil {
-            TTInterface.shared.authenticate(withViewController: self)
-        }
-        
+        print(TTInterface.shared.oauth2?.accessToken)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    @IBAction func authenticatePressed(_ sender: AnyObject) {
+        TTInterface.shared.authenticate(withViewController: self)
+    }
 
 
 }
-

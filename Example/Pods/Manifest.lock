@@ -21,7 +21,7 @@ EXTERNAL SOURCES:
     :git: https://github.com/p2/OAuth2
     :submodules: true
   SCInterface:
-    :path: ../
+    :path: "../"
 
 CHECKOUT OPTIONS:
   p2.OAuth2:

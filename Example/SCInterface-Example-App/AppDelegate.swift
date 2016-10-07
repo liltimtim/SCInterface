@@ -21,12 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-        let urlString = url.absoluteString
-        let replacedString = urlString.replacingOccurrences(of: "betu", with: "beTu")
-        guard let newURL = URL(string: replacedString) else { return false }
+        guard let newURL = TTInterface.convertURL(url: url) else { return true }
         TTInterface.shared.oauth2?.handleRedirectURL(newURL)
         return true
-        
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

@@ -36,6 +36,8 @@
 		599B43EDCC9FCB17B922B1A75117DF20 /* OAuth2CodeGrant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCA8892FCD1456C72C88FD66DE4377F /* OAuth2CodeGrant.swift */; };
 		5A8B1407B52568B69A186DDDEFABCB48 /* OAuth2CodeGrantBasicAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47918C2A3F74E38A67A36A5590BA54D1 /* OAuth2CodeGrantBasicAuth.swift */; };
 		62143065F94E53F437DCE5D7A998D66D /* AFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65D52207D4EBFA266248F38D411F78E /* AFError.swift */; };
+		67271BB81DA84F2E00F3C8AE /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67271BB71DA84F2E00F3C8AE /* Activity.swift */; };
+		673E63A51DA862ED00D73ECC /* Activities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673E63A41DA862ED00D73ECC /* Activities.swift */; };
 		674D173CEF49FA7CEA9C22851F70A542 /* OAuth2AuthRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB3FB28A1C2D64C177FBFC692EB38A9 /* OAuth2AuthRequest.swift */; };
 		6908C57C0851258A6178D9DDFA1207F7 /* Pods-SCInterface_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA618DC5F2D4ECE6DA549268CEBE4F5 /* Pods-SCInterface_Tests-dummy.m */; };
 		6EB3BDD93C801F8ABC66199D3FAFDCAD /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CADAC11820EFD1047A8A87052FC12D3 /* Mapper.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -281,6 +283,8 @@
 		62377AE0247E7C5BC59CC71C3D99E8B8 /* Pods-SCInterface-Example-App-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SCInterface-Example-App-dummy.m"; sourceTree = "<group>"; };
 		63C8CC9DB088F0CA148BAF9EA431DE88 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		65C22DA0F5387996B49E2C98684206F4 /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Source/Request.swift; sourceTree = "<group>"; };
+		67271BB71DA84F2E00F3C8AE /* Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
+		673E63A41DA862ED00D73ECC /* Activities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Activities.swift; sourceTree = "<group>"; };
 		6C425306FCDC74EE2BF5F04E7001AA79 /* p2.OAuth2-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "p2.OAuth2-dummy.m"; sourceTree = "<group>"; };
 		6CCA8892FCD1456C72C88FD66DE4377F /* OAuth2CodeGrant.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OAuth2CodeGrant.swift; path = Sources/Flows/OAuth2CodeGrant.swift; sourceTree = "<group>"; };
 		6E066BFD6FF0BC60D226DA0C68BF5EC8 /* Track.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
@@ -710,6 +714,8 @@
 				B0054C7037C08D32ACE46FB1FC29D4A7 /* SCProfile.swift */,
 				6E066BFD6FF0BC60D226DA0C68BF5EC8 /* Track.swift */,
 				13D4EE32F82B8D2CB5313A97E142D291 /* TTInterface.swift */,
+				67271BB71DA84F2E00F3C8AE /* Activity.swift */,
+				673E63A41DA862ED00D73ECC /* Activities.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -1075,7 +1081,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67271BB81DA84F2E00F3C8AE /* Activity.swift in Sources */,
 				DD425083030CCFC3330F900474639D2A /* SCInterface-dummy.m in Sources */,
+				673E63A51DA862ED00D73ECC /* Activities.swift in Sources */,
 				E8C80585D5B44DD5FA3CDEBB6F5BE68A /* SCProfile.swift in Sources */,
 				7C4227BBD6E047F2F522655AF4B46294 /* Track.swift in Sources */,
 				95687D3C89941AF264E3619D48B7C964 /* TTInterface.swift in Sources */,
