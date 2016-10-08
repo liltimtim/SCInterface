@@ -22,7 +22,9 @@ public class TTInterface: NSObject {
     public static let shared:TTInterface = TTInterface()
     public var oauth2:OAuth2CodeGrantNoTokenType?
     private override init() { super.init() }
-    
+    /** 
+     Search for SoundCloud track resources.
+    */
     public func search(searchTerm terms:String, success:@escaping (_ tracks:[Track])->Void, failure:@escaping (_ error:Error)->Void) -> Request {
         var params = [String:AnyObject]()
         params["q"] = terms as AnyObject
@@ -38,28 +40,28 @@ public class TTInterface: NSObject {
             }
         }
     }
-    
-    public func activities(oauthToken:String, nextRef:String, completion:@escaping ()->Void) {
+    /**
+     Get /me/activities for an authenticated SC User
+    */
+    public func activities(oauthToken:String, nextRef:String, completion:@escaping (_ activities: Activities?, _ error: Error?)->Void) -> Request {
         var params = [String:AnyObject]()
         params["oauth_token"] = oauthToken as AnyObject
-        Alamofire.request(nextRef, method: .get, parameters: params, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
+        return Alamofire.request(nextRef, method: .get, parameters: params, encoding: URLEncoding.default, headers: nil).responseObject { (response: DataResponse<Activities>) in
             switch(response.result) {
             case .success(let data):
-                print(data)
-                completion()
+                completion(data, nil)
                 
             case .failure(let error):
-                print(error)
-                completion()
+                completion(nil, error)
             }
         }
     }
     
-    public func activities(oauthToken:String, completion:@escaping (_ activities:Activities?, _ error:Error?)->Void) {
+    public func activities(oauthToken:String, completion:@escaping (_ activities:Activities?, _ error:Error?)->Void) -> Request {
         var params = [String:AnyObject]()
         params["oauth_token"] = oauthToken as AnyObject
         let url = "\(TTInterface.baseURL)/me/activities"
-        Alamofire.request(url, method: .get, parameters: params, encoding: URLEncoding.default, headers: nil).responseObject { (response: DataResponse<Activities>) in
+        return Alamofire.request(url, method: .get, parameters: params, encoding: URLEncoding.default, headers: nil).responseObject { (response: DataResponse<Activities>) in
             switch(response.result) {
             case .success(let collection):
                 completion(collection, nil)
@@ -73,7 +75,6 @@ public class TTInterface: NSObject {
     
     @available(iOS 9.0, *)
     public func authenticate(withViewController view:UIViewController) {
-        
         oauth2 = OAuth2CodeGrantNoTokenType(settings: [
             "client_id": self.scClientID,
             "client_secret": self.scClientSecret,
@@ -96,21 +97,6 @@ public class TTInterface: NSObject {
             print(error)
             print(self.oauth2?.accessToken)
         }
-        
-    }
-    
-    public func presentAuthenticationView() -> SFSafariViewController? {
-        // use alamofire to generate a URL encoded request
-        var params = [String:AnyObject]()
-        params["client_id"] = self.scClientID as AnyObject
-        params["redirect_uri"] = self.scRedirectURI as AnyObject
-        params["scope"] = "non-expiring" as AnyObject
-        
-        guard let requestURL = Alamofire.request("\(self.scConnectURL)", method: .get, parameters: params, encoding: URLEncoding.queryString, headers: nil).request?.url else { return nil }
-        let sfvc = SFSafariViewController(url: requestURL)
-        sfvc.delegate = self
-        return sfvc
-        
     }
     
     static public func convertURL(url:URL) -> URL? {
