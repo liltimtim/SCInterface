@@ -48,11 +48,13 @@ class TTInterfaceTest: XCTestCase {
     func testAuthenticate() {
         let exp = expectation(description: "Authenticate")
         TTInterface.shared.authenticate(withViewController: UIViewController())
+        exp.fulfill()
+        waitForExpectations(timeout: 10, handler: nil)
     }
     
     func testGetActivities() {
         let exp = expectation(description: "Get me/Activities")
-        TTInterface.shared.activities(oauthToken: oauthToken) { (activities, error) in
+       let _ = TTInterface.shared.meActivities(oauthToken: oauthToken) { (activities, error) in
             XCTAssertNil(error)
             XCTAssertNotNil(activities)
             XCTAssertNotNil(activities?.collection)

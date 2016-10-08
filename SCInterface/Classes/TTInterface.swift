@@ -40,10 +40,46 @@ public class TTInterface: NSObject {
             }
         }
     }
+    
+    // MARK: /user - resources
+    public func users(withId id:String) {
+        
+    }
+    
+    public func usersTracks() {
+        
+    }
+    
+    public func usersPlaylists() {
+        
+    }
+    
+    public func usersFollowings() {
+        
+    }
+    
+    public func usersFollowers() {
+        
+    }
+    
+    public func usersComments() {
+        
+    }
+    
+    public func usersFavorites() {
+        
+    }
+    
+    public func usersFavorites(withId id:String) {
+        
+    }
+
+    // MARK: me/activities
+    
     /**
      Get /me/activities for an authenticated SC User
     */
-    public func activities(oauthToken:String, nextRef:String, completion:@escaping (_ activities: Activities?, _ error: Error?)->Void) -> Request {
+    public func meActivities(oauthToken:String, nextRef:String, completion:@escaping (_ activities: Activities?, _ error: Error?)->Void) -> Request {
         var params = [String:AnyObject]()
         params["oauth_token"] = oauthToken as AnyObject
         return Alamofire.request(nextRef, method: .get, parameters: params, encoding: URLEncoding.default, headers: nil).responseObject { (response: DataResponse<Activities>) in
@@ -57,7 +93,7 @@ public class TTInterface: NSObject {
         }
     }
     
-    public func activities(oauthToken:String, completion:@escaping (_ activities:Activities?, _ error:Error?)->Void) -> Request {
+    public func meActivities(oauthToken:String, completion:@escaping (_ activities:Activities?, _ error:Error?)->Void) -> Request {
         var params = [String:AnyObject]()
         params["oauth_token"] = oauthToken as AnyObject
         let url = "\(TTInterface.baseURL)/me/activities"
