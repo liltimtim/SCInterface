@@ -50,8 +50,29 @@ public class TTInterface: NSObject {
         
     }
     
-    public func usersPlaylists() {
-        
+    public func usersPlaylists(withId id:String, completion:@escaping (_ playlists:[Playlist]?, _ error:Error?) -> Void ) {
+        var params = ["client_id": scClientID]
+        Alamofire.request("\(TTInterface.baseURL)/users/\(id)/playlists", method: .get, parameters: params, encoding: URLEncoding.default, headers: nil).responseArray { (response: DataResponse<[Playlist]>) in
+            switch(response.result) {
+            case .success(let data):
+                completion(data, nil)
+                
+            case .failure(let error):
+                completion(nil, error)
+            }
+        }
+//        Alamofire.request("\(TTInterface.baseURL)/users/\(id)/playlists", method: .get, parameters: params, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
+//            print(response.result)
+//            switch(response.result) {
+//            case .success(let data):
+//                print(data)
+//                completion(nil, nil)
+//                
+//            case .failure(let error):
+//                print(error)
+//                completion(nil, error)
+//            }
+//        }
     }
     
     public func usersFollowings() {
@@ -74,7 +95,18 @@ public class TTInterface: NSObject {
         
     }
 
-    // MARK: me/activities
+    // MARK: me/
+    public func me(oauthToken:String, completion:@escaping (_ profile:SCProfile?, _ error:Error?) -> Void ) -> Request {
+       return Alamofire.request("\(TTInterface.baseURL)/me", method: .get, parameters: ["oauth_token":oauthToken], encoding: URLEncoding.default, headers: nil).responseObject { (response: DataResponse<SCProfile>) in
+            switch(response.result) {
+            case .success(let data):
+                completion(data, nil)
+                
+            case .failure(let error):
+                completion(nil, error)
+            }
+        }
+    }
     
     /**
      Get /me/activities for an authenticated SC User
