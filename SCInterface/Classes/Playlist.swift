@@ -35,7 +35,7 @@ public class Playlist : NSObject, Mappable {
     public private(set) var downloadable:Bool?
     public private(set) var ean:String?
     public private(set) var playlistType:String?
-    
+    public private(set) var tracks:[Track]?
     public required init?(map: Map) { super.init() }
     
     public func mapping(map: Map) {
@@ -65,5 +65,6 @@ public class Playlist : NSObject, Mappable {
         downloadable <- map["downloadable"]
         ean <- map["ean"]
         playlistType <- map["playlist_type"]
+        tracks <- map["tracks"]
     }
 }

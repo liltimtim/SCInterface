@@ -56,6 +56,8 @@ public class Track: NSObject, Mappable {
         
     }
     
+    // TODO: Enum type of available artwork sizes
+    
     public func mapping(map: Map) {
         id <- map["id"]
         ownerId <- map["user_id"]
@@ -96,6 +98,6 @@ public class Track: NSObject, Mappable {
         downloadCount <- map["download_count"]
         favoritingsCount <- map["favoritings_count"]
         commentCount <- map["comment_count"]
-        attatchmentsURL <- map["attachents_url"]
+        attatchmentsURL <- map["attachments_url"]
     }
 }

@@ -35,6 +35,7 @@ class TTInterfaceTest: XCTestCase {
     static func validateTrack(track:Track) {
         XCTAssertNotNil(track.id)
         XCTAssertNotNil(track.ownerId)
+        print(track.artworkURL)
     }
     
     static func validateProfile(user:SCProfile) {
@@ -54,6 +55,13 @@ class TTInterfaceTest: XCTestCase {
         guard let user = playlist.user else {
             XCTFail()
             return
+        }
+        guard let tracks = playlist.tracks else {
+            XCTFail()
+            return
+        }
+        for track in tracks {
+            TTInterfaceTest.validateTrack(track: track)
         }
         TTInterfaceTest.validateProfile(user: user)
     }
@@ -107,6 +115,7 @@ class TTInterfaceTest: XCTestCase {
         TTInterface.shared.usersPlaylists(withId: profileId) { (playlists, error) in
             XCTAssertNotNil(playlists)
             XCTAssertNil(error)
+            print("Available playlists count: \(playlists?.count)")
             guard let pCollection = playlists else {
                 XCTFail()
                 exp.fulfill()
@@ -114,6 +123,7 @@ class TTInterfaceTest: XCTestCase {
             }
             XCTAssertGreaterThan(pCollection.count, 0)
             for playlist in pCollection {
+                print("verifying playlist id: \(playlist.id)")
                 TTInterfaceTest.validatePlaylist(playlist: playlist)
             }
             exp.fulfill()
