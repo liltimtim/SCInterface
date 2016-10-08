@@ -50,9 +50,9 @@ public class TTInterface: NSObject {
         
     }
     
-    public func usersPlaylists(withId id:String, completion:@escaping (_ playlists:[Playlist]?, _ error:Error?) -> Void ) {
+    public func usersPlaylists(withId id:String, completion:@escaping (_ playlists:[Playlist]?, _ error:Error?) -> Void ) -> Request {
         var params = ["client_id": scClientID]
-        Alamofire.request("\(TTInterface.baseURL)/users/\(id)/playlists", method: .get, parameters: params, encoding: URLEncoding.default, headers: nil).responseArray { (response: DataResponse<[Playlist]>) in
+        return Alamofire.request("\(TTInterface.baseURL)/users/\(id)/playlists", method: .get, parameters: params, encoding: URLEncoding.default, headers: nil).responseArray { (response: DataResponse<[Playlist]>) in
             switch(response.result) {
             case .success(let data):
                 completion(data, nil)
@@ -61,18 +61,6 @@ public class TTInterface: NSObject {
                 completion(nil, error)
             }
         }
-//        Alamofire.request("\(TTInterface.baseURL)/users/\(id)/playlists", method: .get, parameters: params, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
-//            print(response.result)
-//            switch(response.result) {
-//            case .success(let data):
-//                print(data)
-//                completion(nil, nil)
-//                
-//            case .failure(let error):
-//                print(error)
-//                completion(nil, error)
-//            }
-//        }
     }
     
     public func usersFollowings() {
