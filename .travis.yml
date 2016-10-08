@@ -6,10 +6,7 @@ env:
     - LANG=en_US.UTF-8
     - LC_ALL=en_US.UTF-8
     - WORKSPACE="Example/SCInterface.xcworkspace"
-    - IOS_FRAMEWORK_SCHEME="ObjectMapper-iOS"
-    - OSX_FRAMEWORK_SCHEME="ObjectMapper-Mac"
-    - TVOS_FRAMEWORK_SCHEME="ObjectMapper-tvOS"
-    - WATCHOS_FRAMEWORK_SCHEME="ObjectMapper-watchOS"
+    - IOS_FRAMEWORK_SCHEME="SCInterface-Example"
     - IOS_SDK=iphonesimulator10.0
     - OSX_SDK=macosx10.12
     - TVOS_SDK=appletvsimulator10.0
