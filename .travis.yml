@@ -5,7 +5,7 @@ env:
   global:
     - LANG=en_US.UTF-8
     - LC_ALL=en_US.UTF-8
-    - WORKSPACE="Example/ObjectMapper.xcworkspace"
+    - WORKSPACE="Example/SCInterface.xcworkspace"
     - IOS_FRAMEWORK_SCHEME="ObjectMapper-iOS"
     - OSX_FRAMEWORK_SCHEME="ObjectMapper-Mac"
     - TVOS_FRAMEWORK_SCHEME="ObjectMapper-tvOS"
